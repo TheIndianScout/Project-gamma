@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Logo from '../assets/LOGO.svg';
 import { AiOutlineUser, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => { //eslint-disable-next-line
-    const [isLoggedIn, setIsLoggedIn] = useState(false); // Login state 
+    const [isLoggedIn, setIsLoggedIn] = useState(true); // Login state 
     const [menuOpen, setMenuOpen] = useState(false); // Menu toggle state
 
     
@@ -33,27 +34,27 @@ const Navbar = () => { //eslint-disable-next-line
                         </div>
                         <div className="w-full flex items-center justify-end" id="Links">
                             <ul className="list-none flex justify-center items-center">
-                                <a href="#home"><li className="mx-4 cursor-pointer relative group">Home
+                                <Link to={'/'}><li className="mx-4 cursor-pointer relative group">Home
                                     <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                                 </li>
-                                </a>
-                                <a href="#about"><li className="mx-4 cursor-pointer relative group">About
+                                </Link>
+                                <Link to={'about'}><li className="mx-4 cursor-pointer relative group">About
                                     <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                                 </li>
-                                </a>
-                                <a href="#contact"><li className="mx-4 cursor-pointer relative group">Contact
+                                </Link>
+                                <Link to={'contact'}><li className="mx-4 cursor-pointer relative group">Contact
                                     <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                                 </li>
-                                </a>
-                                <a href="/"><li className="mx-4 cursor-pointer relative group">Logout
+                                </Link>
+                                <Link to={'login'}><li className="mx-4 cursor-pointer relative group">Logout
                                     <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                                 </li>
-                                </a>
+                                </Link>
                                 
                             </ul>
-                            <div className="border-2 relative border-black p-2 rounded-full transition-all duration-500 text-black group hover:bg-black hover:text-white cursor-pointer">
-                                <a href="/" className=''><AiOutlineUser className="text-md" /></a>
-                            </div>
+                            <Link to={'player-profile'} className="border-2 relative border-black p-2 rounded-full transition-all duration-500 text-black group hover:bg-black hover:text-white cursor-pointer">
+                                <AiOutlineUser className="text-md" />
+                            </Link>
                         </div>
                     </div>
                 )}

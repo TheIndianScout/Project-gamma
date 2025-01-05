@@ -96,7 +96,7 @@ const Home = () => {
 
             {/* Popular Players */}
 
-            <div className='mt-16 md:mt-36' id='popular-players'>
+            <div className='my-16 md:my-36' id='popular-players'>
                 <div className='w-full text-center mb-6'>
                     <h1 className='text-4xl font-bold capitalize'>Popular Players</h1>
                 </div>
@@ -157,19 +157,6 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            {/* About */}
-            
-            <div>
-                <h1>About</h1>
-            </div>
-
-
-            {/* Contact */}
-            
-            <div>
-                <h1>Contact</h1>
             </div>
         </div>
     )

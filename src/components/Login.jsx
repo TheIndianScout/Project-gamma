@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
 import '../index.css';
+import { SlArrowDown} from "react-icons/sl";
 
 const Login = () => {
     const [login, toggle] = useState(true); // Tracks whether Login or Signup form is active
     const [isActive, setIsActive] = useState(false); // Tracks whether the overlay is toggled
+
+    const [isOpen, setIsOpen] = React.useState(false);
+    const [selected, setSelected] = React.useState("Options");
+
+    const toggleDropdown = () => setIsOpen(!isOpen);
+
+    const handleSelect = (value) => {
+        setSelected(value);
+        setIsOpen(false);
+    };
 
     // Handlers for toggling between login and signup
     const handleSignUpClick = () => {
@@ -92,10 +103,30 @@ const Login = () => {
                             />
                             <div className="flex items-center justify-between">
                                 <p className="px-1">Please Select Your Role</p>
-                                <select name="type" id="type" className="outline-none px-1">
-                                    <option value="player">Player</option>
-                                    <option value="club">Club</option>
-                                </select>
+                                <div className="relative inline-block text-left">
+                                    <div
+                                        onClick={toggleDropdown}
+                                        id='type'
+                                        className="bg-white w-28 border flex justify-between items-center border-gray-300 rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">
+                                        {selected}
+                                        <SlArrowDown className={` transition-all ease-in-out ${isOpen? "-rotate-180" : "rotate-0"}`}/>
+                                    </div>
+                                    {isOpen && (
+                                        <ul
+                                            className="absolute right-0 mt-2 w-40 bg-white border border-gray-300 rounded-md shadow-lg z-10">
+                                            <li
+                                                onClick={() => handleSelect("Player")}
+                                                className="px-4 py-2 text-sm text-gray-700 rounded-t-md hover:bg-gray-100 cursor-pointer">
+                                                Player
+                                            </li>
+                                            <li
+                                                onClick={() => handleSelect("Club")}
+                                                className="px-4 py-2 text-sm text-gray-700 rounded-b-md hover:bg-gray-100 cursor-pointer">
+                                                Club
+                                            </li>
+                                        </ul>
+                                    )}
+                                </div>
                             </div>
                             <button className="outline-none font-medium bg-gray-700 w-full py-2 rounded-md mt-3 text-white">
                                 Sign Up

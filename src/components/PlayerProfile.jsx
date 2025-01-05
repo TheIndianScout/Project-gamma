@@ -3,22 +3,22 @@ import bg_1 from '../assets/profile-background-2.jpg';
 import bg_2 from '../assets/profile-background-3.jpg';
 import { AiOutlineEdit, AiFillEdit, AiFillFileImage, AiOutlineClose, AiFillFile } from 'react-icons/ai';
 import VideoCard from './Video';
+import tempVideo from '../assets/temp.mp4';
 
 export default function PlayerProfile() {
 
     const videos = [
-        { id: 1, src: '../assets/temp.mp4' },
-        { id: 2, src: '../assets/temp.mp4' },
-        { id: 3, src: '../assets/temp.mp4' },
-        { id: 4, src: '../assets/temp.mp4' },
-        { id: 5, src: '../assets/temp.mp4' },
-        { id: 6, src: '../assets/temp.mp4' },
-        { id: 7, src: '../assets/temp.mp4' },
-        { id: 8, src: '../assets/temp.mp4' },
-        { id: 9, src: '../assets/temp.mp4' },
-        { id: 10, src: '../assets/temp.mp4' },
-        { id: 11, src: '../assets/temp.mp4' }
-        // Add more video objects as needed
+        { id: 1, src: tempVideo },
+        { id: 2, src: tempVideo },
+        { id: 3, src: tempVideo },
+        { id: 4, src: tempVideo },
+        { id: 5, src: tempVideo },
+        { id: 6, src: tempVideo },
+        { id: 7, src: tempVideo },
+        { id: 8, src: tempVideo },
+        { id: 9, src: tempVideo },
+        { id: 10, src: tempVideo },
+        { id: 11, src: tempVideo }
     ];
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -151,7 +151,9 @@ export default function PlayerProfile() {
                             <span className="relative">Upload</span>
                         </button>
                     </div>
-
+                    
+                    {/* Uploading Popup */}
+                    
                     <div className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 ${isUploading ? "opacity-100 visible z-30" : "opacity-0 invisible"}`} >
                         <div className={`relative z-30 max-w-[80%] md:max-w-[40%] w-full top-0 left-0 bg-white shadow-lg border rounded-lg p-4 transition-transform duration-300 ${isUploading ? "translate-y-0" : "-translate-y-20"}`} id="pop-up">
                             {/* Close Button */}
@@ -183,6 +185,9 @@ export default function PlayerProfile() {
                                                 </p>
                                             </div>
                                         </label>
+                                    </div>
+                                    <div className='border-2 w-full rounded-md p-2'>
+                                        <textarea type="text" placeholder='Add Video Description' rows={5} className='outline-none w-full resize-none'></textarea>
                                     </div>
 
                                     <button className="relative w-full border-2 border-black text-sm my-2 py-2 px-6 md:px-2 rounded-sm text-center transition-all duration-500 text-black group hover:bg-black hover:text-white">

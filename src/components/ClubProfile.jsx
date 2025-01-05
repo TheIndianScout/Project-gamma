@@ -194,7 +194,7 @@ export default function ClubProfile() {
                         {/* Request Section */}
                         {activeTab === "requests" && (
                             <div className="border-2 w-full my-4 rounded-lg">
-                                <div className="flex flex-col items-center justify-center px-4 py-2" id="requests">
+                                <div className="flex flex-col items-center justify-center py-2" id="requests">
                                     <div className="flex flex-col w-full items-center justify-center px-4" id="requests">
                                         {currentRequests.map((request) => (
                                             <Requests key={request.id} request={request} /> // Corrected prop name
