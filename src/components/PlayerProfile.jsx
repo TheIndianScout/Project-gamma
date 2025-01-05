@@ -94,11 +94,12 @@ export default function PlayerProfile() {
                                         </h1>
                                         <div className="mt-3 w-full px-4 sm:px-2 flex flex-col items-center justify-center">
                                             <input
-                                                className="border rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="name" placeholder="Name" />
+                                                className="border-2 rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="name" placeholder="Name" />
                                             <input
-                                                className="border rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="age" placeholder="Age" />
+                                                className="border-2 rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="age" placeholder="Age" />
                                             <input
-                                                className="border rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="location" placeholder="Location" />
+                                                className="border-2 rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="location" placeholder="Location" />
+                                            <textarea name="description" id="description" placeholder='Enter Description (Max 250 characters)' rows={4} className='resize-none w-full outline-none border-2 rounded-sm py-1 px-2 sm:p-3 peer text-sm sm:text-base' maxLength={250}></textarea>
                                             <hr className="my-2" />
                                             <h2 className="text-sm sm:text-base capitalize text-justify">
                                                 Please select <span className="font-bold text-orange-600">Image *</span> file only
@@ -131,7 +132,9 @@ export default function PlayerProfile() {
                         </div>
                     </div>
 
-                    <div className='border sm:border-0 text-justify px-6 sm:px-4 py-2 bg-[#ebebeb] md:bg-white' id='details'>
+                    <div className='border sm:border-0 text-justify px-6 sm:px-4 py-2 bg-[#ebebeb] md:bg-white' id='player-details'>
+                        <p className='text-sm md:text-base font-semibold mb-2 sm:mx-6 md:mx-0'>Name: <span>{ }</span>
+                        </p>
                         <p className='text-sm md:text-base font-semibold mb-2 sm:mx-6 md:mx-0'>Email: <span>{ }</span>
                         </p>
                         <p className='text-sm md:text-base font-semibold my-2 sm:mx-6 md:mx-0'>Location: <span>{ }</span>
@@ -187,7 +190,7 @@ export default function PlayerProfile() {
                                         </label>
                                     </div>
                                     <div className='border-2 w-full rounded-md p-2'>
-                                        <textarea type="text" placeholder='Add Video Description' rows={5} className='outline-none w-full resize-none'></textarea>
+                                        <textarea type="text" placeholder='Add Video Description (Max 350 Characters)' maxLength={350} rows={5} className='outline-none w-full resize-none'></textarea>
                                     </div>
 
                                     <button className="relative w-full border-2 border-black text-sm my-2 py-2 px-6 md:px-2 rounded-sm text-center transition-all duration-500 text-black group hover:bg-black hover:text-white">

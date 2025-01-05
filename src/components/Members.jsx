@@ -4,7 +4,7 @@ export default function Members({ member }) {
     if (!member) return null;
 
     return (
-            <div className="flex items-center w-full border md:border-2 py-3 px-4 md:px-6 md:py-4 rounded-md mt-4" id='member-card'>
+            <div className="flex items-center w-full border md:border-2 py-3 px-4 md:px-6 md:py-4 rounded-md mt-4 font-mont" id='member-card'>
                 <div className="w-[60px] h-[60px] md:w-[120px] md:h-[120px] rounded-full overflow-hidden">
                     <img
                         className="h-full w-full object-cover"

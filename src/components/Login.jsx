@@ -27,7 +27,7 @@ const Login = () => {
     };
 
     return (
-        <div className="w-full p-5 border h-[92.3vh] md:h-[90.9vh] flex items-center justify-center relative">
+        <div className="w-full p-5 border h-[92.3vh] md:h-[90.9vh] flex items-center justify-center relative font-mont">
             <div className={`container flex items-center justify-between p-3 max-w-6xl md:h-[75vh] rounded-lg shadow-xl border-2 border-[#000] border-opacity-5 ${isActive ? 'active' : ''}`}>
                 {/* Login Form */}
                 <div className={`login w-full mx-5 md:px-10 ${!login && 'hidden md:block'}`}>

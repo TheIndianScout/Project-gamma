@@ -1,6 +1,7 @@
 import React from 'react'
 import hero from '../assets/hero.png'
 import image from '../assets/login_bg.jpg';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -20,11 +21,11 @@ const Home = () => {
                             <p className="text-xl sm:text-2xl md:text-3xl font-medium text-center md:text-left capitalize">
                                 Join new clubs around you.
                             </p>
-                            <a className="relative border-2  sm:w-[10rem] block my-2 md:my-0 md:ml-3 py-2 px-2 rounded-md text-center transition-all duration-500 text-black group hover:bg-black hover:text-white"
-                                href="/">
+                            <Link className="relative border-2  sm:w-[10rem] block my-2 md:my-0 md:ml-3 py-2 px-2 rounded-md text-center transition-all duration-500 text-black group hover:bg-black hover:text-white"
+                                to={'login'}>
                                 <span className="absolute inset-0 border-2 border-black rounded-md transition-transform duration-500 transform scale-0 group-hover:scale-100"></span>
                                 <span className="relative z-10">Join Now</span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

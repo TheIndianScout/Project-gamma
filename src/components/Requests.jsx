@@ -3,7 +3,7 @@ import React from 'react';
 export default function Requests({ request }) {
     if (!request) return null;
     return (
-        <div className="flex items-center justify-between w-full border md:border-2 py-3 px-4 md:px-6 md:py-4 rounded-md my-2"
+        <div className="flex items-center justify-between w-full border md:border-2 py-3 px-4 md:px-6 md:py-4 rounded-md my-2 font-mont"
             id="request-card">
             <div className="flex items-center">
                 <div className="w-[60px] h-[60px] md:w-[120px] md:h-[120px] rounded-full" id="req-img">

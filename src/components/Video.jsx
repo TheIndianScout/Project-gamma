@@ -51,7 +51,7 @@ const VideoCard = ({src}) => {
     };
 
     return (
-        <div>
+        <div className='font-mont'>
             {/*Comment Section */}
             <div className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 ${isCommenting ? "opacity-100 visible z-30" : "opacity-0 invisible"}`}>
                 <div className="absolute inset-0 max-w-[650px] mx-auto w-full flex items-center p-2 justify-center z-40">
