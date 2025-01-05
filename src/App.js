@@ -9,7 +9,6 @@ import ClubProfile from './components/ClubProfile';
 // import ClubView from './components/ClubView';
 import Footer from './components/Footer';
 import './index.css';
-import Requests from './components/Requests';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -27,12 +26,6 @@ function App() {
           <Route path='/club-profile' element={<ClubProfile />} >/</Route>
         </Routes>
       </Router>
-      {/* <Home /> */}
-      {/* <PlayerProfile /> */}
-      {/* <ClubProfile /> */}
-      {/* <PlayerView /> */}
-      {/* <ClubView /> */}
-      <Requests />
       <Footer />
     </div>
   );

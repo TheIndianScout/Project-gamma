@@ -4,7 +4,7 @@ import { AiOutlineUser, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => { //eslint-disable-next-line
-    const [isLoggedIn, setIsLoggedIn] = useState(false); // Login state 
+    const [isLoggedIn, setIsLoggedIn] = useState(true); // Login state 
     const [menuOpen, setMenuOpen] = useState(false); // Menu toggle state
 
     
@@ -17,13 +17,12 @@ const Navbar = () => { //eslint-disable-next-line
                 <div className="md:hidden flex items-center">
                     <button
                         onClick={() => setMenuOpen(!menuOpen)}
-                        className="text-2xl focus:outline-none"
-                    >
+                        className="text-2xl focus:outline-none">
                         {menuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
                     </button>
                 </div>
                 {/* Desktop Navbar */}
-                    <div className="flex md:flex w-full justify-between items-center">
+                    <div className="hidden md:flex w-full justify-between items-center">
                         <div className="w-full flex items-center justify-center" id="Search">
                             <input
                                 type="text"
@@ -79,6 +78,7 @@ const Navbar = () => { //eslint-disable-next-line
                     </ul>
                 </div>
             </div>
+
         </div>
     );
 };

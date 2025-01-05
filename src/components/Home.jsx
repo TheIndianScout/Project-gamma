@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     return (
         <div className="max-w-[1240px] w-full flex flex-col items-center justify-center mx-auto font-mont" id="home">
-            <div className="w-full h-[95vh] mx-auto mt-10">
-                <div className="flex flex-col md:flex-row justify-between items-center mx-auto py-12 px-4 w-full">
+            <div className="w-full h-[85vh] md:h-[95vh] mx-auto md:mt-10">
+                <div className="flex flex-col md:flex-row justify-between items-center mx-auto py-8 md:py-12 px-4 w-full">
                     <div
-                        className="w-full mx-10 h-[50vh] md:h-[70vh] flex justify-center items-center"
+                        className="w-full mx-10 h-[50vh] md:h-[80vh] flex justify-center items-center"
                         id="right">
                         <img className='pointer-events-none drop-shadow-2xl' src={hero} alt="" />
                     </div>
@@ -33,12 +33,12 @@ const Home = () => {
 
             {/* Popular Clubs */}
 
-            <div className='mt-20' id='popular-clubs'>
+            <div className='mt-14 md:mt-20' id='popular-clubs'>
                 <div className='w-full text-center mb-6' >
                     <h1 className='text-4xl font-bold capitalize'>Popular Clubs</h1>
                 </div>
                 <div className='w-full py-4 flex flex-col md:flex-row items-center justify-evenly' id='cards'>
-                    <div className="p-4 rounded-lg border w-[22rem] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
+                    <div className="p-4 rounded-lg border w-[80%] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
                         id="card">
                         <div>
                             <img className="rounded-md" src={image} alt="club" />
@@ -56,7 +56,7 @@ const Home = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="p-4 rounded-lg border w-[22rem] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
+                    <div className="p-4 rounded-lg border w-[80%] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
                         id="card">
                         <div>
                             <img className="rounded-md" src={image} alt="club" />
@@ -74,7 +74,7 @@ const Home = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="p-4 rounded-lg border w-[22rem] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
+                    <div className="p-4 rounded-lg border w-[80%] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
                         id="card">
                         <div>
                             <img className="rounded-md" src={image} alt="club" />
@@ -102,7 +102,7 @@ const Home = () => {
                     <h1 className='text-4xl font-bold capitalize'>Popular Players</h1>
                 </div>
                 <div className='w-full py-4 flex flex-col md:flex-row items-center justify-evenly' id='cards'>
-                    <div className="p-4 rounded-lg border w-[22rem] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
+                    <div className="p-4 rounded-lg border w-[80%] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
                         id="card">
                         <div>
                             <img className="rounded-md" src={image} alt="club" />
@@ -121,7 +121,7 @@ const Home = () => {
 
                         </div>
                     </div>
-                    <div className="p-4 rounded-lg border w-[22rem] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
+                    <div className="p-4 rounded-lg border w-[80%] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
                         id="card">
                         <div>
                             <img className="rounded-md" src={image} alt="club" />
@@ -139,7 +139,7 @@ const Home = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="p-4 rounded-lg border w-[22rem] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
+                    <div className="p-4 rounded-lg border w-[80%] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
                         id="card">
                         <div>
                             <img className="rounded-md" src={image} alt="club" />

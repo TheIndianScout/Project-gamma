@@ -25,16 +25,17 @@ export default function ClubProfile() {
         { id: 6, name: "Request 6", username: "@request6", imgSrc: bg_1 },
         // Add more requests as needed
     ];
-    const [currentPage, setCurrentPage] = useState(1);
+    const [memberCurrentPage, setMemberCurrentPage] = useState(1);
+    const [requestCurrentPage, setRequestCurrentPage] = useState(1);
     const membersPerPage = 5;
     const requestsPerPage = 5;
 
     // Calculate indices for the members to display
-    const indexOfLastMember = currentPage * membersPerPage;
+    const indexOfLastMember = memberCurrentPage * membersPerPage;
     const indexOfFirstMember = indexOfLastMember - membersPerPage;
     const currentMembers = members.slice(indexOfFirstMember, indexOfLastMember);
 
-    const indexOfLastRequest = currentPage * requestsPerPage;
+    const indexOfLastRequest = requestCurrentPage * requestsPerPage;
     const indexOfFirstRequest = indexOfLastRequest - requestsPerPage;
     const currentRequests = requests.slice(indexOfFirstRequest, indexOfLastRequest);
 
@@ -104,6 +105,7 @@ export default function ClubProfile() {
                                                 className="border rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="since" placeholder="Since" />
                                             <input
                                                 className="border rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="location" placeholder="Location" />
+                                            <textarea name="description" id="description" placeholder='Enter Description (Max 250 characters)' rows={4} className='resize-none w-full outline-none border-2 rounded-sm py-1 px-2 sm:p-3 peer text-sm sm:text-base' maxLength={250}></textarea>
                                             <hr className="my-2" />
                                             <h2 className="text-sm sm:text-base capitalize text-justify">
                                                 Please select <span className="font-bold text-orange-600">Image *</span> file only
@@ -137,7 +139,8 @@ export default function ClubProfile() {
                     </div>
 
                     <div className='border sm:border-0 text-justify px-6 sm:px-4 py-2 bg-[#ebebeb] md:bg-white' id='details'>
-                        <p className='text-sm md:text-base font-semibold mb-2 sm:mx-6 md:mx-0'>Email: <span className='font-normal'>{ }</span></p>
+                        <p className='text-sm md:text-base font-semibold mb-2 sm:mx-6 md:mx-0'>Name: <span>{ }</span></p>
+                        <p className='text-sm md:text-base font-semibold mb-2 sm:mx-6 md:mx-0'>Email: <span>{ }</span></p>
                         <p className='text-sm md:text-base font-semibold my-2 sm:mx-6 md:mx-0'>Location: <span>{ }</span></p>
                         <p className='text-sm md:text-base font-semibold my-2 sm:mx-6 md:mx-0'>Since: <span>{ }</span></p>
                     </div>
@@ -178,8 +181,8 @@ export default function ClubProfile() {
                                     {Array.from({ length: totalMemberPages }, (_, index) => (
                                         <button
                                             key={index}
-                                            onClick={() => setCurrentPage(index + 1)}
-                                            className={`py-1 px-3 mx-1 border rounded-md ${currentPage === index + 1
+                                            onClick={() => setMemberCurrentPage(index + 1)}
+                                            className={`py-1 px-3 mx-1 border rounded-md ${memberCurrentPage === index + 1
                                                 ? 'bg-black text-white border-transparent border-2'
                                                 : 'text-black border-2'
                                                 } hover:bg-black hover:text-white transition`}>
@@ -205,8 +208,8 @@ export default function ClubProfile() {
                                         {Array.from({ length: totalRequestPages }, (_, index) => (
                                             <button
                                                 key={index}
-                                                onClick={() => setCurrentPage(index + 1)}
-                                                className={`py-1 px-3 mx-1 border rounded-md ${currentPage === index + 1
+                                                onClick={() => setRequestCurrentPage(index + 1)}
+                                                className={`py-1 px-3 mx-1 border rounded-md ${requestCurrentPage === index + 1
                                                     ? 'bg-black text-white border-transparent border-2'
                                                     : 'text-black border-2'
                                                     } hover:bg-black hover:text-white transition`}>
