@@ -55,6 +55,14 @@ export default function ClubProfile() {
         setIsEditing(false); // Close popup
     };
 
+    const [charCount, setCharCount] = useState(0);
+    const charLimit = 250;
+
+    const handleInputChange = (e) => {
+        setCharCount(e.target.value.length);
+    };
+
+
     return (
         // Profile Picture and BG
         <div className='max-w-[1240px] w-full flex items-center justify-center mx-auto font-mont'>
@@ -105,8 +113,16 @@ export default function ClubProfile() {
                                                 className="border rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="since" placeholder="Since" />
                                             <input
                                                 className="border rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="location" placeholder="Location" />
-                                            <textarea name="description" id="description" placeholder='Enter Description (Max 250 characters)' rows={4} className='resize-none w-full outline-none border-2 rounded-sm py-1 px-2 sm:p-3 peer text-sm sm:text-base' maxLength={250}></textarea>
-                                            <hr className="my-2" />
+
+                                            <textarea name="description" id="description" placeholder='Enter Description' rows={4} className='resize-none w-full outline-none border-2 rounded-sm py-1 px-2 sm:p-3 peer text-sm sm:text-base' maxLength={charLimit} onChange={handleInputChange}></textarea>
+
+                                            <div className="w-full text-right font-medium text-sm my-1">
+                                                <p className='text-gray-400'>
+                                                    {charCount}/{charLimit}
+                                                </p>
+                                            </div>
+
+                                            <hr className="mt-2" />
                                             <h2 className="text-sm sm:text-base capitalize text-justify">
                                                 Please select <span className="font-bold text-orange-600">Image *</span> file only
                                                 for the profile picture

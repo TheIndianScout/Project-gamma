@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../assets/LOGO.svg'
+import {Link} from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -12,10 +13,9 @@ const Footer = () => {
                 <div className='w-full my-4 md:my-10 flex flex-col items-center text-left justify-center' id='links'>
                     <p className='font-semibold -ml-5'>Links</p>
                     <ul className='list-none'>
-                        <a href="/"><li>Home</li></a>
-                        <a href="/"><li>Explore</li></a>
-                        <a href="/"><li>About</li></a>
-                        <a href="/"><li>Contact</li></a>
+                        <Link to={'/'}><li>Home</li></Link>
+                        <Link to={'about'}><li>About</li></Link>
+                        <Link to={'contact'}><li>Contact</li></Link>
                     </ul>
                 </div>
 

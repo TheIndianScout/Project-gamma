@@ -2,8 +2,8 @@ import React from 'react'
 import hero from '../assets/hero.png'
 import image from '../assets/login_bg.jpg';
 import { Link } from 'react-router-dom';
-
 const Home = () => {
+
     return (
         <div className="max-w-[1240px] w-full flex flex-col items-center justify-center mx-auto font-mont" id="home">
             <div className="w-full h-[85vh] md:h-[95vh] mx-auto md:mt-10">
@@ -102,6 +102,7 @@ const Home = () => {
                     <h1 className='text-4xl font-bold capitalize'>Popular Players</h1>
                 </div>
                 <div className='w-full py-4 flex flex-col md:flex-row items-center justify-evenly' id='cards'>
+
                     <div className="p-4 rounded-lg border w-[80%] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
                         id="card">
                         <div>
@@ -116,11 +117,11 @@ const Home = () => {
                             <a className="relative border block mt-3 py-2 px-4 rounded-md text-center transition-all duration-500 text-black group hover:bg-black hover:text-white"
                                 href="/">
                                 <span className="absolute inset-0 border-2 border-black rounded-md transition-transform duration-500 transform scale-0 group-hover:scale-100"></span>
-                                <span className="relative z-10">View Player</span>
+                                <span className="relative z-10">Visit Player</span>
                             </a>
-
                         </div>
                     </div>
+
                     <div className="p-4 rounded-lg border w-[80%] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
                         id="card">
                         <div>
@@ -135,10 +136,11 @@ const Home = () => {
                             <a className="relative border block mt-3 py-2 px-4 rounded-md text-center transition-all duration-500 text-black group hover:bg-black hover:text-white"
                                 href="/">
                                 <span className="absolute inset-0 border-2 border-black rounded-md transition-transform duration-500 transform scale-0 group-hover:scale-100"></span>
-                                <span className="relative z-10">View Player</span>
+                                <span className="relative z-10">Visit Player</span>
                             </a>
                         </div>
                     </div>
+
                     <div className="p-4 rounded-lg border w-[80%] my-8 mx-8 flex flex-col justify-center items-center shadow-lg transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
                         id="card">
                         <div>
@@ -153,7 +155,7 @@ const Home = () => {
                             <a className="relative border block mt-3 py-2 px-4 rounded-md text-center transition-all duration-500 text-black group hover:bg-black hover:text-white"
                                 href="/">
                                 <span className="absolute inset-0 border-2 border-black rounded-md transition-transform duration-500 transform scale-0 group-hover:scale-100"></span>
-                                <span className="relative z-10">View Player</span>
+                                <span className="relative z-10">Visit Player</span>
                             </a>
                         </div>
                     </div>

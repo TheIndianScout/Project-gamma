@@ -49,6 +49,13 @@ export default function PlayerProfile() {
         setIsUploading(false);
     };
 
+    const [charCount, setCharCount] = useState(0);
+    const charLimit = 250;
+
+    const handleInputChange = (e) => {
+        setCharCount(e.target.value.length);
+    };
+
     return (
         // Profile Picture and BG
         <div className='max-w-[1240px] w-full flex items-center justify-center mx-auto font-mont' id='player-profile'>
@@ -99,7 +106,12 @@ export default function PlayerProfile() {
                                                 className="border-2 rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="age" placeholder="Age" />
                                             <input
                                                 className="border-2 rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="location" placeholder="Location" />
-                                            <textarea name="description" id="description" placeholder='Enter Description (Max 250 characters)' rows={4} className='resize-none w-full outline-none border-2 rounded-sm py-1 px-2 sm:p-3 peer text-sm sm:text-base' maxLength={250}></textarea>
+                                            <textarea name="description" id="description" placeholder='Enter Description' rows={4} className='resize-none w-full outline-none border-2 rounded-sm py-1 px-2 sm:p-3 peer text-sm sm:text-base' maxLength={charLimit} onChange={handleInputChange}></textarea>
+                                            <div className="w-full text-right font-medium text-sm my-1">
+                                                <p className='text-gray-400'>
+                                                    {charCount}/{charLimit}
+                                                </p>
+                                            </div>
                                             <hr className="my-2" />
                                             <h2 className="text-sm sm:text-base capitalize text-justify">
                                                 Please select <span className="font-bold text-orange-600">Image *</span> file only
@@ -154,9 +166,9 @@ export default function PlayerProfile() {
                             <span className="relative">Upload</span>
                         </button>
                     </div>
-                    
+
                     {/* Uploading Popup */}
-                    
+
                     <div className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 ${isUploading ? "opacity-100 visible z-30" : "opacity-0 invisible"}`} >
                         <div className={`relative z-30 max-w-[80%] md:max-w-[40%] w-full top-0 left-0 bg-white shadow-lg border rounded-lg p-4 transition-transform duration-300 ${isUploading ? "translate-y-0" : "-translate-y-20"}`} id="pop-up">
                             {/* Close Button */}
@@ -219,8 +231,8 @@ export default function PlayerProfile() {
                                     key={index}
                                     onClick={() => setCurrentPage(index + 1)}
                                     className={`py-1 px-3 mx-1 border rounded-md ${currentPage === index + 1
-                                            ? 'bg-black text-white border-transparent border-2'
-                                            : 'text-black border-2'
+                                        ? 'bg-black text-white border-transparent border-2'
+                                        : 'text-black border-2'
                                         } hover:bg-black hover:text-white transition`}>
                                     {index + 1}
                                 </button>

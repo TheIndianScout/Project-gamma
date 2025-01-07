@@ -1,7 +1,16 @@
-import React from 'react'
+import { React, useState } from 'react'
 import bg from '../assets/Contact_Bg.jpg'
 
 export default function Contact() {
+
+    const [charCount, setCharCount] = useState(0);
+    const charLimit = 400;
+
+
+    const handleInputChange = (e) => {
+        setCharCount(e.target.value.length);
+    };
+
     return (
         <div className='relative font-mont px-8 md:px-0 flex items-center justify-center md:justify-end' id='contact'>
             <div>
@@ -45,14 +54,24 @@ export default function Contact() {
 
                         <label htmlFor="message"
                             className='w-full text-justify font-medium mt-2'>Message</label>
-                        <textarea name="message" rows={6} id="message" placeholder='Leave us a message...'
-                            className='font-medium border-2 border-gray-300 resize-none w-full p-2 rounded-md bg-transparent outline-none'>
+                        <textarea
+                            name="message"
+                            rows={6} id="message"
+                            placeholder='Leave us a message...'
+                            onChange={handleInputChange} 
+                            maxLength={charLimit}
+                            className='font-medium border-2 border-gray-300 resize-none w-full p-2 my-1 rounded-md bg-transparent outline-none'>
                         </textarea>
+                        <div className="w-full text-right font-medium text-sm">
+                            <p className='text-gray-400'>
+                                {charCount}/{charLimit}
+                            </p>
+                        </div>
 
                         <button className="relative border-2 bg-black md:bg-transparent text-white md:text-black border-gray-300 block w-full mt-3 py-2 px-4 rounded-md text-center transition-all duration-500 group md:hover:bg-black md:hover:text-white md:hover:border-black"
-                                type='submit'>
-                                <span className="absolute inset-0 border-2 border-black rounded-md transition-transform duration-500 transform scale-0 md:group-hover:scale-100"></span>
-                                <span className="relative z-10">Submit</span>
+                            type='submit'>
+                            <span className="absolute inset-0 border-2 border-black rounded-md transition-transform duration-500 transform scale-0 md:group-hover:scale-100"></span>
+                            <span className="relative z-10">Submit</span>
                         </button>
 
                     </form>

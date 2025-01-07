@@ -11,9 +11,9 @@ const Navbar = () => { //eslint-disable-next-line
     return (
         <div className="w-full border-b shadow-md font-mont">
             <div className="flex items-center justify-between px-4 md:px-14 py-3">
-                <div className="w-[50%]" id="Logo">
+                <Link to={'/'} className="w-[50%]" id="Logo">
                     <img className="w-[130px]" src={Logo} alt="Logo" />
-                </div>
+                </Link>
                 <div className="md:hidden flex items-center">
                     <button
                         onClick={() => setMenuOpen(!menuOpen)}
@@ -70,11 +70,11 @@ const Navbar = () => { //eslint-disable-next-line
                         />
                     </div>
                     <ul className="list-none w-full text-center">
-                        <Link to={'/'}><li className="py-2 border-b border-gray-200">Home</li></Link>
-                        <Link to={'about'}><li className="py-2 border-b border-gray-200">About Us</li></Link>
-                        <Link to={'contact'}><li className="py-2 border-b border-gray-200">Contact Us</li></Link>
-                        <Link to={'player-profile'}><li className="py-2 border-b border-gray-200">Profile</li></Link>
-                        <Link to={'login'}><li className="py-2 border-b border-gray-200">Login</li></Link>
+                        <Link to={'/'}><li className="py-2 border-b border-gray-200" onClick={() => setMenuOpen(!menuOpen)}>Home</li></Link>
+                        <Link to={'about'}><li className="py-2 border-b border-gray-200" onClick={() => setMenuOpen(!menuOpen)}>About Us</li></Link>
+                        <Link to={'contact'}><li className="py-2 border-b border-gray-200" onClick={() => setMenuOpen(!menuOpen)}>Contact Us</li></Link>
+                        <Link to={'player-profile'}><li className="py-2 border-b border-gray-200" onClick={() => setMenuOpen(!menuOpen)}>Profile</li></Link>
+                        <Link to={'login'}><li className="py-2 border-b border-gray-200" onClick={() => setMenuOpen(!menuOpen)}>Login</li></Link>
                     </ul>
                 </div>
             </div>
