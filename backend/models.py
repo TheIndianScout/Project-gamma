@@ -2,40 +2,32 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, name, username, role, password=None):
+    def create_user(self,email,username,user_type,password=None):
         if not email:
             raise ValueError("Please provide an email")
-        if not name:
-            raise ValueError("Please enter your name")
         if not username:
-            raise ValueError("Please choose a username")
-        if not role:
-            raise ValueError("Please select your role")
-        if password is None:
-            raise ValueError("Please enter a password")
+            raise ValueError("Please provide a username")
+        if not user_type:
+            raise ValueError("Please provide a user type")
+        if not password:
+            raise ValueError("Please provide a password")
         
         email = self.normalize_email(email)
-        
-        user = self.model(email=email, name=name, username=username, role=role)
+
+        user = self.model(email=email,username=username,user_type=user_type)
         user.set_password(password)
         user.save()
-
         return user
 
-class UserAccount(AbstractBaseUser):
-    email = models.EmailField(max_length=255, unique=True)
-    name = models.CharField(max_length=100)
-    username = models.CharField(max_length=100, unique=True)
-    location = models.CharField(max_length=255, blank=True, null=True)
-    age = models.PositiveIntegerField(blank=True, null=True)
-    about = models.TextField(blank=True, null=True)
-    profile_img = models.ImageField(upload_to='profile_images/',blank=True, null=True)
-    role = models.CharField(max_length=50)
+class User(AbstractBaseUser):
+    username = models.CharField(max_length=50,unique=True)
+    email = models.EmailField(max_length=255,unique=True)
+    user_type = models.CharField(max_length=20)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name', 'username', 'role']
-
+    REQUIRED_FIELDS = ['username','password','user_type','created_at']
     def __str__(self):
         return self.username

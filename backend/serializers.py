@@ -1,17 +1,7 @@
 from rest_framework import serializers
-from django.contrib.auth import get_user_model
+from .models import User
 
-UserAccount = get_user_model()
-
-class UserAccountSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True)
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UserAccount
-        fields = '__all__'
-        read_only_fields = ['id']
-        extra_kwargs = {
-            'age': {'required': False},
-            'about': {'required': False},
-            'profile_img': {'required': False},
-            'location' : {'required': False},
-        }
+        model = User
+        fields = ('username','email','password','user_type')
