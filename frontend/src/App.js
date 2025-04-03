@@ -8,6 +8,8 @@ const About = lazy(() => import('./components/About.jsx'));
 const Contact = lazy(() => import('./components/Contact.jsx'));
 const PlayerProfile = lazy(() => import('./components/PlayerProfile.jsx'));
 const ClubProfile = lazy(() => import('./components/ClubProfile.jsx'));
+const PlayerView = lazy(() => import('./components/PlayerView.jsx'));
+const ClubView = lazy(() => import('./components/ClubView.jsx'));
 const Login = lazy(() => import('./components/Login.jsx'));
 const Footer = lazy(() => import('./components/Footer.jsx'));
 
@@ -34,6 +36,8 @@ function Wrapper() {
           <Route path="/login" element={<Login />} />
           <Route path="/player-profile" element={<PlayerProfile />} />
           <Route path="/club-profile" element={<ClubProfile />} />
+          <Route path="/player/:username" element={<PlayerView />} />
+          <Route path="/club/:username" element={<ClubView />} />
         </Routes>
       )}
       {!loading && <Footer />}

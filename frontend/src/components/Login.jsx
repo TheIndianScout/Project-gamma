@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../index.css';
-import { SlArrowDown} from "react-icons/sl";
-import {useNavigate} from 'react-router-dom';
+import { SlArrowDown } from "react-icons/sl";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [login, toggle] = useState(true); // Tracks whether Login or Signup form is active
@@ -21,7 +21,7 @@ const Login = () => {
 
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPass, setLoginPass] = useState("");
-    
+
 
     const toggleDropdown = () => setIsOpen(!isOpen);
 
@@ -36,7 +36,7 @@ const Login = () => {
 
         try {
             const response = await axios.post('http://localhost:8000/backend/api/token/', {
-                "email" : loginEmail,
+                "email": loginEmail,
                 "password": loginPass
             });
 
@@ -45,9 +45,9 @@ const Login = () => {
             // Save tokens in localStorage (or sessionStorage if you want temporary storage)
             localStorage.setItem('access_token', access);
             localStorage.setItem('refresh_token', refresh);
-    
+
             console.log('Logged in successfully\n', localStorage['access_token']);
-            navigate('/player-profile'); 
+            navigate('/player-profile');
 
         } catch (error) {
             console.error('Error fetching user data:', error);
@@ -60,12 +60,13 @@ const Login = () => {
 
         try {
             const url = 'http://localhost:8000/backend/registerUser/';
-            const data = { email: signUpEmail, name: signUpName, username: userName, role: selected, password: signUpPass};
+            const data = { email: signUpEmail, name: signUpName, username: userName, role: selected, password: signUpPass };
             const response = await axios.post(url, data);
             console.log(response.data);
-          } catch (error) {
+            navigate('/player-profile');
+        } catch (error) {
             console.error(error);
-          }
+        }
     }
 
     // Handlers for toggling between login and signup
@@ -128,7 +129,7 @@ const Login = () => {
                 </div>
                 {/* Signup Form */}
                 <div className={`signup w-full mx-5 md:px-10 ${login && 'hidden md:block'}`}>
-                    <form method='POST' onSubmit={signUpUser}> 
+                    <form method='POST' onSubmit={signUpUser}>
                         <h1 className="text-center font-bold text-4xl mb-8">SIGN UP</h1>
                         <div>
                             <input
@@ -167,7 +168,7 @@ const Login = () => {
                                         id='type'
                                         className="bg-white w-28 border flex justify-between items-center border-gray-300 rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">
                                         {selected}
-                                        <SlArrowDown className={` transition-all ease-in-out ${isOpen? "-rotate-180" : "rotate-0"}`}/>
+                                        <SlArrowDown className={` transition-all ease-in-out ${isOpen ? "-rotate-180" : "rotate-0"}`} />
                                     </div>
                                     {isOpen && (
                                         <ul

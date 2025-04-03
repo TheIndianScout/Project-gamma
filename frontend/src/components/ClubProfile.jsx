@@ -12,8 +12,7 @@ export default function ClubProfile() {
         { id: 2, name: 'Player 2', username: '@player2', imgSrc: bg_1 },
         { id: 3, name: 'Player 3', username: '@player3', imgSrc: bg_1 },
         { id: 4, name: 'Player 4', username: '@player4', imgSrc: bg_1 },
-        { id: 5, name: 'Player 5', username: '@player5', imgSrc: bg_1 },
-        { id: 6, name: 'Player 6', username: '@player6', imgSrc: bg_1 },
+        { id: 5, name: 'Player 5', username: '@player5', imgSrc: bg_1 }
     ];
 
     const requests = [
@@ -21,8 +20,7 @@ export default function ClubProfile() {
         { id: 2, name: "Request 2", username: "@request2", imgSrc: bg_1 },
         { id: 3, name: "Request 3", username: "@request3", imgSrc: bg_1 },
         { id: 4, name: "Request 4", username: "@request4", imgSrc: bg_1 },
-        { id: 5, name: "Request 5", username: "@request5", imgSrc: bg_1 },
-        { id: 6, name: "Request 6", username: "@request6", imgSrc: bg_1 },
+        { id: 5, name: "Request 5", username: "@request5", imgSrc: bg_1 }
         // Add more requests as needed
     ];
     const [memberCurrentPage, setMemberCurrentPage] = useState(1);
@@ -80,7 +78,8 @@ export default function ClubProfile() {
                     <div className='bg-[#ebebeb] md:bg-white pt-20 pb-4'>
                         <div className='p-4 flex items-start justify-between rounded-t-md  sm:mx-6 md:mx-0' id='name'>
                             <div className='mr-2 px-2 sm:px-0'>
-                                <h1 className='font-bold text-xl sm:text-2xl md:text-3xl'>Club1</h1>
+                                <h1 className='font-bold text-xl sm:text-2xl md:text-3xl'>Club</h1>
+                                <p className="text-sm md:text-base">@club</p>
                                 <p className='text-sm md:text-base md:w-[65%] text-justify mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ullam perferendis ipsam ab officia ipsa dignissimos itaque quia a amet reprehenderit quod accusamus fuga blanditiis, autem aperiam optio, officiis dolor.</p>
                             </div>
                             {/* Icon Section */}
@@ -108,13 +107,13 @@ export default function ClubProfile() {
                                         </h1>
                                         <div className="mt-3 w-full px-4 sm:px-2 flex flex-col items-center justify-center">
                                             <input
-                                                className="border rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="name" placeholder="Name" />
+                                                className="border rounded-sm py-1 px-2 sm:p-3 w-full my-1 outline-none peer text-sm sm:text-base" type="text" id="name" placeholder="Name" />
                                             <input
-                                                className="border rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="since" placeholder="Since" />
+                                                className="border rounded-sm py-1 px-2 sm:p-3 w-full my-1 outline-none peer text-sm sm:text-base" type="text" id="since" placeholder="Since" />
                                             <input
-                                                className="border rounded-sm py-1 px-2 sm:p-3 w-full my-2 outline-none peer text-sm sm:text-base" type="text" id="location" placeholder="Location" />
+                                                className="border rounded-sm py-1 px-2 sm:p-3 w-full my-1 outline-none peer text-sm sm:text-base" type="text" id="location" placeholder="Location" />
 
-                                            <textarea name="description" id="description" placeholder='Enter Description' rows={4} className='resize-none w-full outline-none border-2 rounded-sm py-1 px-2 sm:p-3 peer text-sm sm:text-base' maxLength={charLimit} onChange={handleInputChange}></textarea>
+                                            <textarea name="description" id="description" placeholder='Enter Description' rows={4} className='resize-none w-full outline-none border-2 rounded-sm py-1 px-2 my-1 sm:p-3 peer text-sm sm:text-base' maxLength={charLimit} onChange={handleInputChange}></textarea>
 
                                             <div className="w-full text-right font-medium text-sm my-1">
                                                 <p className='text-gray-400'>
@@ -155,7 +154,6 @@ export default function ClubProfile() {
                     </div>
 
                     <div className='border sm:border-0 text-justify px-6 sm:px-4 py-2 bg-[#ebebeb] md:bg-white' id='details'>
-                        <p className='text-sm md:text-base font-semibold mb-2 sm:mx-6 md:mx-0'>Name: <span>{ }</span></p>
                         <p className='text-sm md:text-base font-semibold mb-2 sm:mx-6 md:mx-0'>Email: <span>{ }</span></p>
                         <p className='text-sm md:text-base font-semibold my-2 sm:mx-6 md:mx-0'>Location: <span>{ }</span></p>
                         <p className='text-sm md:text-base font-semibold my-2 sm:mx-6 md:mx-0'>Since: <span>{ }</span></p>

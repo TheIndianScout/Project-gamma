@@ -66,7 +66,7 @@ const VideoCard = ({src}) => {
                         <div className='w-full h-[175px] md:h-[270px] resize-none border-2 overflow-y-auto my-3 px-2 py-1 outline-none rounded-md' id='comments'>
                             {comments.map((comment) => (
                                 <div key={comment.id} id='comment' className='mt-2'>
-                                    <p className='text-xs font-bold'>{comment.user}</p> {/* Display the username */}
+                                    <p className='text-xs font-bold'>{comment.username}</p> {/* Display the username */}
                                     <h1 className='text-sm text-justify'>{comment.text}</h1>
                                 </div>
                             ))}

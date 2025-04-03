@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import bg_1 from '../assets/profile-background-2.jpg';
 import bg_2 from '../assets/profile-background-3.jpg';
 import { AiOutlineClose, AiFillContacts, AiOutlineContacts, AiOutlineMail } from 'react-icons/ai';
+import { useLocation, useParams } from 'react-router-dom';
 
 export default function ClubView() {
+
+    const location = useLocation();
+    const clubData = location.state;
+    const { username } = useParams();
+
     const [isContacting, setIsContacting] = useState(false);
 
     // Function to handle icon click
@@ -32,8 +38,11 @@ export default function ClubView() {
                     <div className='bg-[#ebebeb] md:bg-white pt-20 pb-4'>
                         <div className='p-4 flex items-start justify-between rounded-t-md  sm:mx-6 md:mx-0' id='name'>
                             <div className='mr-2 px-2 sm:px-0'>
-                                <h1 className='font-bold text-xl sm:text-2xl md:text-3xl'>Club1</h1>
-                                <p className='text-sm md:text-base md:w-[65%] text-justify mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ullam perferendis ipsam ab officia ipsa dignissimos itaque quia a amet reprehenderit quod accusamus fuga blanditiis, autem aperiam optio, officiis dolor.</p>
+                                <h1 className="font-bold text-xl sm:text-2xl md:text-3xl">{clubData?.name || username}</h1>
+                                <p className="text-sm md:text-base">@{clubData?.username || username}</p>
+                                <p className="text-sm md:text-base md:w-[65%] text-justify mt-2">
+                                    {clubData?.description || 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}
+                                </p>
                             </div>
                             {/* Icon Section */}
                             <div className="text-xl flex items-center justify-center md:text-2xl ml-2 cursor-pointer"

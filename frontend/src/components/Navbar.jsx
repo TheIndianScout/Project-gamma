@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Logo from '../assets/LOGO.svg';
 import { AiOutlineUser, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import Search from './Search';
 
 const Navbar = () => { //eslint-disable-next-line
     const [isLoggedIn, setIsLoggedIn] = useState(true); // Login state 
@@ -24,11 +25,7 @@ const Navbar = () => { //eslint-disable-next-line
                 {/* Desktop Navbar */}
                     <div className="hidden md:flex w-full justify-between items-center">
                         <div className="w-full flex items-center justify-center" id="Search">
-                            <input
-                                type="text"
-                                className="border-2 rounded-3xl px-3 outline-none text-[#5b5b5b] border-[#c1c1c1] py-2 text-md w-full"
-                                placeholder="Search Player Or Club"
-                            />
+                        <Search />
                         </div>
                         <div className="w-full flex items-center justify-end" id="Links">
                             <ul className="list-none flex justify-center items-center">
