@@ -35,8 +35,8 @@ const Login = () => {
         event.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:8000/backend/api/token/', {
-                "email": loginEmail,
+            const response = await axios.post('http://localhost:8000/login/token/', {
+                "email" : loginEmail,
                 "password": loginPass
             });
 
@@ -59,8 +59,8 @@ const Login = () => {
         event.preventDefault();
 
         try {
-            const url = 'http://localhost:8000/backend/registerUser/';
-            const data = { email: signUpEmail, name: signUpName, username: userName, role: selected, password: signUpPass };
+            const url = 'http://localhost:8000/backend/register';
+            const data = { email: signUpEmail, username: userName, user_type: selected, password: signUpPass};
             const response = await axios.post(url, data);
             console.log(response.data);
             navigate('/player-profile');
